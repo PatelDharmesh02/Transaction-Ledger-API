@@ -10,28 +10,30 @@ A small FastAPI application backed by PostgreSQL. It supports account creation, 
 ## Setup
 
 1. Create a PostgreSQL database:
-
    ```sql
-   CREATE DATABASE transaction_ledger;
+    CREATE DATABASE transaction_ledger;
    ```
-
 2. Update `DATABASE_URL` in `.env` with your PostgreSQL username and password.
-
 3. Create and activate a virtual environment:
 
    ```bash
-   python -m venv .venv
-   source .venv/bin/activate
+    python -m venv .venv
+    source .venv/bin/activate
    ```
 
    On Windows, activate it with `.venv\\Scripts\\activate`.
 
 4. Install the dependencies and run the API:
-
    ```bash
-   pip install -r requirements.txt
-   uvicorn app.main:app --reload
+    pip install -r requirements.txt
+    uvicorn app.main:app --reload
    ```
+
+   if application not running successfully then try this activating the environment
+
+```bash
+source .venv/bin/activate && uvicorn app.main:app --reload
+```
 
 The application creates the tables on startup. Open <http://127.0.0.1:8000/docs> to try the endpoints.
 
